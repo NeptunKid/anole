@@ -1,15 +1,22 @@
 ;require(['anole', 'zepto'], function (anole){
+  var sceneHandler = $('<div class="scene scene1">');
   
-  var template = "<div>";
+  sceneHandler.html("<h1>1</h1>")
   
   anole.addScene({
-    anime:function(finish){
+    sceneHandler: sceneHandler,
+    onInit: function (){
+      
+    },
+    onStart: function (finish){
       console.log("scene1 playing");
       setTimeout(function (){
         console.log("scene1 playend");
         finish();
       },1000); 
     },
-    template: template
+    onEnd: function (){
+     
+    }
   })
 });
